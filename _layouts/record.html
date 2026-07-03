@@ -50,8 +50,9 @@ layout: default
           </aside>
         {% endif %}
 
-        <!-- These are the administrative records layout -->
+        {{ content }}
 
+        <!-- These are the administrative records layout -->
         <table>
           <thead>
             <tr>
@@ -60,7 +61,6 @@ layout: default
             </tr>
           </thead>
           <tbody>
-
             {% if page.pickup_date %}<tr><td><strong>Pickup Date</strong></td><td>{{ page.pickup_date }}</td></tr>{% endif %}
             {% if page.scan_date %}<tr><td><strong>Scan Date</strong></td><td>{{ page.scan_date }}</td></tr>{% endif %}
             {% if page.ocr_date %}<tr><td><strong>OCR Date</strong></td><td>{{ page.ocr_date }}</td></tr>{% endif %}
@@ -73,9 +73,6 @@ layout: default
 
         {% if page.document %}<p><a href="{{ page.document }}" class="btn btn--primary" target="_blank">Open Document</a></p>{% endif %}
         <!-- END -->
-
-        {{ content }}
-        {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
       <footer class="page__meta">
