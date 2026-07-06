@@ -12,6 +12,9 @@
           {{ site.masthead_title | default: site.title | escape_once | strip }}
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle | escape_once | strip }}</span>{% endif %}
         </a>
+        {% if site.staging %}
+          <span style="color: red;" class="site-title">STAGING SITE</span>
+        {% endif %}
         <ul class="visible-links">
           {%- for link in site.data.navigation.main -%}
             <li class="masthead__menu-item">
@@ -22,10 +25,6 @@
               >{{ link.title }}</a>
             </li>
           {%- endfor -%}
-          {% if site.staging %}
-            <span style="color: red;" class="site-title">STAGING SITE</span>
-          {% endif %}
-
           {% if site.minimal_mistakes_skin2 %}
             <li class="masthead__menu-item">
               <a title="Toggle light and dark modes"
