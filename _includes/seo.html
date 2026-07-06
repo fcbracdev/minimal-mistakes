@@ -37,7 +37,7 @@
   {%- assign og_type = "website" -%}
 {%- endif -%}
 
-<title>{% if site.staging %}STAGING{{ title_separator }}{% endif %}{{ seo_title }}{% if paginator %}{% unless paginator.page == 1 %} {{ title_separator }} {{ site.data.ui-text[locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %}</title>
+<title>{% if site.staging %}STAGING {{ title_separator }} {% endif %}{{ seo_title }}{% if paginator %}{% unless paginator.page == 1 %} {{ title_separator }} {{ site.data.ui-text[locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %}</title>
 <meta name="description" content="{{ seo_description }}">
 
 {% if author.name %}
