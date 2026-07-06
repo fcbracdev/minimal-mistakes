@@ -22,6 +22,10 @@
               >{{ link.title }}</a>
             </li>
           {%- endfor -%}
+          {% if site.staging %}
+            <span style="color: red;" class="site-title">STAGING SITE</span>
+          {% endif %}
+
           {% if site.minimal_mistakes_skin2 %}
             <li class="masthead__menu-item">
               <a title="Toggle light and dark modes"

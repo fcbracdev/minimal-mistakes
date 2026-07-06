@@ -3,10 +3,6 @@ layout: archive
 ---
 {%- assign locale = page.locale | default: layout.locale | default: site.locale %}
 
-{% if site.staging %}
-  <h1>STAGING SITE</h1>
-{% endif %}
-
 {{ content }}
 
 <h2>{{ site.data.ui-text[locale].recent_posts | default: "Recent Activities" }}</h2>
