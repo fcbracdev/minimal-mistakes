@@ -109,13 +109,13 @@ table.sortable {
 	td.num {
 		text-align: right;
 	}
-	tbody {
-		tr {
-			&:nth-child(odd) {
-				background-color: $background-color_1;
-			}
-		}
-	}
+	// tbody {
+	// 	tr {
+	// 		&:nth-child(odd) {
+	// 			background-color: $background-color_1;
+	// 		}
+	// 	}
+	// }
 }
 table.show-unsorted-icon {
 	th {
