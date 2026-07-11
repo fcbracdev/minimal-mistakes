@@ -37,6 +37,7 @@ table.sortable {
 			text-align: left;
 			outline: none;
 			cursor: pointer;
+			color: inherit;
 			span {
 				position: absolute;
 				right: 4px;
@@ -64,7 +65,7 @@ table.sortable {
 					span {
 						&::after {
 							content: "▼";
-							color: $color_1;
+							color: inherit;
 							font-size: 100%;
 							top: 0;
 						}
@@ -74,7 +75,7 @@ table.sortable {
 					span {
 						&::after {
 							content: "▼";
-							color: $color_1;
+							color: inherit;
 							font-size: 100%;
 							top: 0;
 						}
@@ -90,7 +91,7 @@ table.sortable {
 		span {
 			&::after {
 				content: "▼";
-				color: $color_1;
+				color: inherit;
 				font-size: 100%;
 				top: 0;
 			}
@@ -100,7 +101,7 @@ table.sortable {
 		span {
 			&::after {
 				content: "▲";
-				color: $color_1;
+				color: inherit;
 				font-size: 100%;
 				top: 0;
 			}
@@ -124,7 +125,7 @@ table.show-unsorted-icon {
 				span {
 					&::after {
 						content: "♢";
-						color: $color_1;
+						color: inherit;
 						font-size: 100%;
 						position: relative;
 						top: -3px;
