@@ -15,6 +15,17 @@
   {% if site.enable_copy_code_button -%}
     window.enable_copy_code_button = true;
   {%- endif %}
+    window.addEventListener("load", (event) => {
+      if(sessionStorage.getItem('theme') === "dark")
+      {
+        document.getElementById('site-logo-img').src = '/assets/images/site-logo-dark.png';
+      }
+      else
+      {
+        document.getElementById('site-logo-img').src = '/assets/images/site-logo-aqua.png';
+      }
+    }
+);
 </script>
 
 <!-- For all browsers -->
