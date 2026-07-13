@@ -16,14 +16,12 @@
     window.enable_copy_code_button = true;
   {%- endif %}
     window.addEventListener("load", (event) => {
+      node = document.getElementById('theme_logo');
       if(sessionStorage.getItem('theme') === "dark")
       {
-        document.getElementById('site-logo-img').src = '/assets/images/site-logo-dark.png';
+        node = document.getElementById('theme_logo_2');
       }
-      else
-      {
-        document.getElementById('site-logo-img').src = '/assets/images/site-logo-light.png';
-      }
+      document.getElementById('site-logo-img').src=node.getAttribute('href');      
     }
 );
 </script>
