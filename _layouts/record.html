@@ -50,8 +50,6 @@ layout: default
           </aside>
         {% endif %}
 
-        {{ content }}
-
         <!-- These are the administrative records layout -->
         <table>
           <thead>
@@ -73,6 +71,23 @@ layout: default
 
         {% if page.document %}<p><a href="{{ page.document }}" class="btn btn--primary" target="_blank">Open Document</a></p>{% endif %}
         <!-- END -->
+
+        {{ content }}
+
+        {% if page.search_text %}
+            {% capture search_text_path %}{{ page.search_text }}{% endcapture %}
+            {% if search_text_path %}
+            <h2>Search Text</h2>
+            <p class="search-text">
+             {% include_relative {{ search_text_path }} %}
+            </p>
+            {% endif %}
+        {% endif %}          
+
+      </div>
+
+
+
       </section>
 
       <footer class="page__meta">
