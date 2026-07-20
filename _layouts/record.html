@@ -72,23 +72,6 @@ layout: default
         {% if page.document %}<p><a href="{{ page.document }}" class="btn btn--primary" target="_blank">Open Document</a></p>{% endif %}
         <!-- END -->
 
-        {{ content }}
-
-        {% if page.search_text %}
-            {% capture search_text_path %}{{ page.search_text }}{% endcapture %}
-            {% if search_text_path %}
-            <div class="wrap-collabsible">
-              <input id="collapsible-page-{{ forloop.index }}" class="toggle" type="checkbox">
-              <label for="collapsible-page-{{ forloop.index }}" class="lbl-toggle" title="Search text">&nbsp</label>
-              <div class="collapsible-content">
-                <div class="content-inner" title="These words are taken from the PDF and used for search engine indexing.">
-              {% include_relative {{ search_text_path }} %}
-                </div>
-              </div>
-            </div>
-            {% endif %}
-        {% endif %}          
-
       </div>
 
 
