@@ -535,6 +535,15 @@
     font-size: $type-size-7;
   }
 
+  .status {
+    display: block;
+    padding: 0.25rem 0.75rem;
+    color: $muted-text-color;
+    font-weight: bold;
+    line-height: 1.5;
+    border-bottom: 1px solid $border-color;
+  }
+
   a {
     display: block;
     padding: 0.25rem 0.75rem;

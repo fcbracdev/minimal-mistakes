@@ -41,65 +41,50 @@ layout: default
       {% endunless %}
 
       <section class="page__content e-content" itemprop="text">
-        {% if page.toc %}
-          <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
+        <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
+          {% if page.cercla_status %}
+            <nav class="toc" aria-label="CERCLA Status">
+              <header><h4 class="nav__title">CERCLA Status</h4></header>
+              <ul class="toc__menu"><li class="status">{{ page.cercla_status }}</li></ul>
+            </nav>
+            <p>&nbsp;</p>
+          {% endif %}
+            {% if page.toc %}
             <nav class="toc" aria-label="Table of contents">
               <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[locale].toc_label | default: "On this page" }}</h4></header>
               {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
             </nav>
-          </aside>
-        {% endif %}
+            {% endif %}
+        </aside>
 
         <!-- These are the administrative records layout -->
-        <table>
-          <thead>
-            <tr>
-              <th>Detail</th>
-              <th>Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% if page.pickup_date %}<tr><td><strong>Pickup Date</strong></td><td>{{ page.pickup_date }}</td></tr>{% endif %}
-            {% if page.scan_date %}<tr><td><strong>Scan Date</strong></td><td>{{ page.scan_date }}</td></tr>{% endif %}
-            {% if page.ocr_date %}<tr><td><strong>OCR Date</strong></td><td>{{ page.ocr_date }}</td></tr>{% endif %}
-            {% if page.drawings_pulled %}<tr><td><strong>Drawings Pulled & Sent</strong></td><td>{{ page.drawings_pulled }}</td></tr>{% endif %}
-            {% if page.sent_date %}<tr><td><strong>Sent Date</strong></td><td>{{ page.sent_date }}</td></tr>{% endif %}
-            {% if page.returned_date %}<tr><td><strong>Returned Date</strong></td><td>{{ page.returned_date }}</td></tr>{% endif %}
-            {% if page.pages %}<tr><td><strong>Pages</strong></td><td>{{ page.pages }}</td></tr>{% endif %}
-          </tbody>
-        </table>
+        
+        {{ content }}
 
-        {% if page.document %}<p><a href="{{ page.document }}" class="btn btn--primary" target="_blank">Open Document</a></p>{% endif %}
-
-        {% if page.related_sites %}
-        <h3>Related Sites</h3>
-        <ul>
-          {% assign pages = site.pages %}
-          {%- for site in page.related_sites -%}
-            {%- if site != 'ALL' -%}
-              {% assign site_page = pages | where: "site_name", site | first %}
-              {% if site_page %}
-                <li><a href="{{ site_page.url | relative_url }}">{{ site_page.title }}</a></li>
+        {% if page.site_name %}
+          <!-- <h3>Related Documents</h3> -->
+          <ul>
+            {% assign posts = site.posts | where_exp: "post", "post.categories contains 'record'" %}
+            {%- for post in posts -%}
+              {% if post.related_sites contains page.site_name or post.related_sites contains 'ALL' %}
+                <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
               {% endif %}
-            {%- endif -%}
-          {%- endfor -%}
+            {%- endfor -%}
           </ul>
         {% endif %}
+
         <!-- END -->
 
-      </div>
-
-
-
+        {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
-      <!-- <footer class="page__meta">
+      <footer class="page__meta">
         {% if site.data.ui-text[locale].meta_label %}
           <h4 class="page__meta-title">{{ site.data.ui-text[locale].meta_label }}</h4>
         {% endif %}
         {% include page__taxonomy.html locale=locale %}
         {% include page__date.html locale=locale %}
-      </footer> -->
+      </footer>
 
       {% if page.share %}{% include social-share.html locale=locale %}{% endif %}
 
