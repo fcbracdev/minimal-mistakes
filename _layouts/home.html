@@ -17,7 +17,7 @@ layout: archive
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 <div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html locale=locale entries=posts type=entries_layout %}
+  {% include collection-cards.html locale=locale entries=posts type=entries_layout %}
 </div>
 
 {% include paginator.html locale=locale %}
