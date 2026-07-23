@@ -1,7 +1,7 @@
 $black: #282828;
 
-$ratio: 0.8;
-$card_width: 360px;
+$ratio: 0.9;
+$card_width: 300px;
 $card_height: $card_width * $ratio;
 $card_padding: 10px;
 $card_margin: 5px;
@@ -20,7 +20,7 @@ $card-padding-basis: 15px;
   width: $card_width;
   border: $active-color 3px solid;
   min-height: $card_height;
-  
+  position: relative; 
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -39,6 +39,48 @@ $card-padding-basis: 15px;
     text-align: center;
     margin-top: auto;
     // border-radius: 0px 0px 8px 8px;
+  }
+
+  .cercla-status {
+    position: absolute; 
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    bottom: 0; 
+    color: $background-color;
+    background: mix($primary-color, $darker-gray, 90%);
+    text-align: center;
+    border-radius: 0px 0px 8px 8px ;
+  }
+
+  .notice--text
+  {
+    background: mix($light-gray, $darker-gray, 90%);
+  }
+
+  .notice--text--primary
+  {
+    background: mix($primary-color, $darker-gray, 90%);
+  }
+
+  .notice--text--info
+  {
+    background: mix($info-color, $darker-gray, 90%);
+  }
+
+  .notice--text--warning
+  {
+    background: mix($warning-color, $darker-gray, 90%);
+  }
+
+  .notice--text--success
+  {
+    background: mix($success-color, $darker-gray, 90%);
+  }
+
+  .notice--text--danger
+  {
+    background: mix($danger-color, $darker-gray, 90%);
   }
 
   hr {
