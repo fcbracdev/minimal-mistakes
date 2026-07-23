@@ -6,9 +6,13 @@
 <div class="collection-card-container">
     {% endif %}
   <div class="collection-card">
-    <h4 class="nav__title"><a href="{{ post.url | relative_url }}">{{ post.title  | markdownify | strip_html |  truncate: 50 }}</a></h4>
+    <h4 class="nav__title">
+      {% if logo %}
+        <span>{{ logo }}</span>
+      {% endif %}
+      <a href="{{ post.url | relative_url }}">{{ post.title  | markdownify | strip_html |  truncate: 50 }}</a></h4>
     <p>{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>
-    <a href="{{ post.url | relative_url }}">More Information</a>
+    <!-- <a href="{{ post.url | relative_url }}">More Information</a> -->
   </div>
     {% if mod == 1 or forloop.last %}
 </div>

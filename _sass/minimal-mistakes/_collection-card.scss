@@ -4,12 +4,10 @@ $ratio: 0.8;
 $card_width: 360px;
 $card_height: $card_width * $ratio;
 $card_padding: 10px;
-$card-bgcolor: $background-color;
 $card_margin: 5px;
 $card_round: 10px;
 
 $card-padding-basis: 15px;
-$card_head_padding: 0px 0px $card-padding-basis 0px;
 
 .collection-card-container{
   display: flex;
@@ -24,9 +22,7 @@ $card_head_padding: 0px 0px $card-padding-basis 0px;
   min-height: $card_height;
   
   display: -webkit-box;
-  
   display: -ms-flexbox;
-  
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -35,14 +31,14 @@ $card_head_padding: 0px 0px $card-padding-basis 0px;
   padding: 0px;
   margin: $card_margin;
   
-  border-radius: $card_round;
+  border-radius: 12px;
   a {
     text-decoration: none;
     color: $background-color;
     background: mix($primary-color, $darker-gray, 90%);
     text-align: center;
     margin-top: auto;
-    border-radius: 0px 0px $card_round  $card_round ;
+    // border-radius: 0px 0px 8px 8px;
   }
 
   hr {
@@ -54,9 +50,13 @@ $card_head_padding: 0px 0px $card-padding-basis 0px;
         margin: 0px;
         padding: 10px;
         border: 0px;
-        border-radius: $card_round  $card_round 0px 0px;
+        border-radius: 8px 8px 0px 0px;
         color: $background-color;
         background: mix($primary-color, $darker-gray, 90%);
+
+        span {
+            padding: 4px;
+        }
     }  
 
     p {
@@ -64,6 +64,10 @@ $card_head_padding: 0px 0px $card-padding-basis 0px;
         padding: $card-padding-basis;
         border: 0px;
         color: $text-color;
-        background: $card-bgcolor;
-    }
+        background: $background-color;
+    }   
+}
+
+.collection-card:hover {
+  border: $primary-color 3px solid;
 }

@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 ---
 {%- assign locale = page.locale | default: layout.locale | default: site.locale %}
 
@@ -17,7 +17,8 @@ layout: archive
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 <div class="entries-{{ entries_layout }}">
-  {% include collection-cards.html locale=locale entries=posts type=entries_layout %}
+  {% capture logo %}<i class='fa-solid fa-calendar-days'></i>{% endcapture %}
+  {% include collection-cards.html posts=posts logo=logo %}
 </div>
 
 {% include paginator.html locale=locale %}

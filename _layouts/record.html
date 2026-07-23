@@ -76,9 +76,11 @@ layout: default
         <ul>
           {% assign pages = site.pages %}
           {%- for site in page.related_sites -%}
-            {%- if site != 'ALL' -%}
+            {%- if site == 'ALL' -%}
+                <li><a href="{{ '/project-sites.html' | relative_url }}">All Sites</a></li>
+            {% else %}
               {% assign site_page = pages | where: "site_name", site | first %}
-              {% if site_page %}
+              {% if site_page.url != "/404.html" %}
                 <li><a href="{{ site_page.url | relative_url }}">{{ site_page.title }}</a></li>
               {% endif %}
             {%- endif -%}
