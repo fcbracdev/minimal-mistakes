@@ -1,8 +1,10 @@
 $black: #282828;
 
-$ratio: 0.9;
+$ratio-regular: 0.9;
+$ratio-tall: 1.2;
+$ratio-short: 0.6;
 $card_width: 300px;
-$card_height: $card_width * $ratio;
+$card_height: $card_width * $ratio-regular;
 $card_padding: 10px;
 $card_margin: 5px;
 $card_round: 10px;
@@ -16,9 +18,20 @@ $card-padding-basis: 15px;
   margin-right: auto;
 }
 
+.collection-card-tall {
+  height: $card_width * $ratio-tall !important;
+  min-height: $card_width * $ratio-tall !important;
+}
+
+.collection-card-short {
+  height: $card_width * $ratio-short !important;
+  min-height: $card_width * $ratio-short !important;
+}
+
 .collection-card {
   width: $card_width;
   border: $active-color 3px solid;
+  height: $card_height;
   min-height: $card_height;
   position: relative; 
   display: -webkit-box;
@@ -107,6 +120,7 @@ $card-padding-basis: 15px;
         border: 0px;
         color: $text-color;
         background: $background-color;
+        overflow: hidden;
     }   
 }
 
