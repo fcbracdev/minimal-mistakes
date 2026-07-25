@@ -47,8 +47,19 @@ layout: default
               <header><h4 class="nav__title">CERCLA Status</h4></header>
               <ul class="toc__menu"><li class="status">{{ page.cercla_status }}</li></ul>
             </nav>
-            <p>&nbsp;</p>
           {% endif %}
+          {% if page.map_file %}
+          <div class="nav_map">
+          <nav class="toc" aria-label="Map">
+                <header><h4 class="nav__title">Map</h4></header>
+
+          {% if page.coordinates %}<a href="https://www.google.com/maps/search/@{{page.coordinates}},17z" target="_blank">{% endif %}
+            <img src="{{ page.map_file }}">
+          {% if page.coordinates %}</a>{% endif %}
+          </nav>
+          </div>
+          {% endif %}
+
             {% if page.toc %}
             <nav class="toc" aria-label="Table of contents">
               <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[locale].toc_label | default: "On this page" }}</h4></header>
