@@ -28,6 +28,10 @@ $card-padding-basis: 15px;
   min-height: $card_width * $ratio-short !important;
 }
 
+.cc-no-decoration {
+      text-decoration: none;
+}
+
 .collection-card {
   width: $card_width;
   border: $active-color 3px solid;
@@ -45,14 +49,6 @@ $card-padding-basis: 15px;
   margin: $card_margin;
   
   border-radius: 12px;
-  a {
-    text-decoration: none;
-    color: $background-color;
-    background: mix($primary-color, $darker-gray, 90%);
-    text-align: center;
-    margin-top: auto;
-    // border-radius: 0px 0px 8px 8px;
-  }
 
   .cercla-status {
     position: absolute; 
@@ -115,12 +111,13 @@ $card-padding-basis: 15px;
     }  
 
     p {
-        margin:5px;
+        margin:5px !important;
         padding: $card-padding-basis;
         border: 0px;
         color: $text-color;
         background: $background-color;
         overflow: hidden;
+        text-overflow: ellipsis;
     }   
 }
 
