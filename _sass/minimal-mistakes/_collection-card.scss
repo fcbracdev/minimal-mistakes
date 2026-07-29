@@ -16,6 +16,16 @@ $card-padding-basis: 15px;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
+
+a {
+  &:visited {
+    text-decoration: none  !important;
+  }
+
+  &:hover {
+    text-decoration: none  !important;
+  }
+}
 }
 
 .collection-card-tall {
@@ -47,8 +57,15 @@ $card-padding-basis: 15px;
           flex-direction: column;
   padding: 0px;
   margin: $card_margin;
-  
   border-radius: 12px;
+
+  .cc_nav__title {
+    margin: 0;
+    padding: 5px 5px;
+    font-family: $sans-serif-narrow;
+    font-size: $type-size-5;
+    font-weight: bold;
+  }
 
   .cercla-status {
     position: absolute; 
@@ -110,15 +127,15 @@ $card-padding-basis: 15px;
         }
     }  
 
-    p {
-        margin:5px !important;
-        padding: $card-padding-basis;
-        border: 0px;
-        color: $text-color;
-        background: $background-color;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }   
+  p {
+      margin: 0px !important;
+      padding: $card-padding-basis;
+      border: 0px;
+      color: $text-color;
+      background: $background-color;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }   
 }
 
 .collection-card:hover {
