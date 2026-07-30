@@ -73,6 +73,7 @@ layout: default
         {{ content }}
 
         {% if page.site_name %}
+          <h3>Related Documents</h3>
           <ul>
             {% assign posts = site.posts | where_exp: "post", "post.categories contains 'record'" %}
             {%- for post in posts -%}
