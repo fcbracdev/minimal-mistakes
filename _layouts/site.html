@@ -53,9 +53,10 @@ layout: default
           <nav class="toc" aria-label="Map">
                 <header><h4 class="nav__title">Map</h4></header>
 
-          {% if page.coordinates %}<a href="https://www.google.com/maps/search/@{{page.coordinates}},17z" target="_blank">{% endif %}
+          {% if page.coordinates %}<p style="text-align: center; margin: 0 0 !important;">{{page.coordinates}}</p><a title="Open at OpenStreetMap" href="https://www.openstreetmap.org/search?query={{page.coordinates | url_encode}}&zoom=17" target="_blank">{% endif %}
             <img src="{{ page.map_file }}">
           {% if page.coordinates %}</a>{% endif %}
+            <p style="font-size: 0.5em; text-align: right; margin: 0 0 !important;">Map data from OpenStreetMap</p>
           </nav>
           </div>
           {% endif %}
