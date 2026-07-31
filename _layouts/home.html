@@ -14,11 +14,12 @@ layout: single
 {% endif %}
 
 {% assign posts = posts | where_exp: "post", "post.categories contains 'activity'" %}
-
-{% assign entries_layout = page.entries_layout | default: 'list' %}
+{% assign entries_layout = 'grid' %}
 <div class="entries-{{ entries_layout }}">
-  {% capture logo %}<i class='fa-solid fa-calendar-days'></i>{% endcapture %}
-  {% include collection-cards.html posts=posts logo=logo %}
+      {% for post in posts %}
+        {% include archive-single.html locale=locale type=entries_layout %}
+      {% endfor %}
 </div>
+<div style="clear: both;"></div>
 
 {% include paginator.html locale=locale %}
