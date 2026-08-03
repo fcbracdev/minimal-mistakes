@@ -1,4 +1,4 @@
-.imageMap {
+.image-map {
 	width: 100%;
 	position: relative;
 	margin-bottom: 0px;
@@ -16,13 +16,10 @@
 		div {
 			&:hover {
 				a {
-					background: $primary-color;
-					z-index: 100;
-					opacity: 0.75;
-					filter: alpha(opacity=50);
-					border: 2px solid $darker-gray;
-					color: $background-color;
-                    text-decoration: none;
+					background: $info-color;
+  					outline: 2px solid $info-color;		
+					color: #fff;
+			        text-decoration: none;
 				}
 			}
 		}
@@ -30,13 +27,13 @@
 	a {
 		display: block;
 		position: absolute;
-		background: $background-color;
+		background:$info-color;
 		z-index: 100;
 		opacity: 0.75;
 		filter: alpha(opacity=70);
 		border: 2px solid $dark-gray;
 		text-align: center;
-        color: $text-color;
+        color: #fff;
         font-family: $header-font-family;
         font-size: $type-size-8;
         text-decoration: none;
@@ -44,7 +41,7 @@
 	&:hover {
 		.hotspots {
 			visibility: visible;
-			border: 2px solid $dark-gray;
+  			outline: 2px solid $dark-gray;		
 		}
 	}
 }
