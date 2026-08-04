@@ -32,9 +32,9 @@ layout: default
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
           {% if page.title -%}
-          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+          <h2 id="page-title" class="page__title p-name" itemprop="headline">
             <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
-          </h1>
+          </h2>
           {%- endif %}
           {% include page__meta.html locale=locale %}
         </header>
@@ -42,6 +42,10 @@ layout: default
 
       <section class="page__content e-content" itemprop="text">
         <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
+        {% if page.site_name %}
+         <h3>{{ page.site_name }}</h3>
+        {% endif %}
+
           {% if page.cercla_status %}
             <nav class="toc" aria-label="CERCLA Status">
               <header><h4 class="nav__title">CERCLA Status</h4></header>
@@ -70,7 +74,7 @@ layout: default
         </aside>
 
         <!-- These are the administrative records layout -->
-        
+
         {{ content }}
 
         {% if page.site_name %}
