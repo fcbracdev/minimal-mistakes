@@ -1,0 +1,38 @@
+{% assign locale = include.locale | default: site.locale %}
+{% assign object = include.object %}
+
+<!-- REMOVE THIS SECTION FOR PRODUCTION -->
+<div id="coords">
+<button id="click-copy">Copy</button>
+<textarea id="click-coords">    left: "0"<br>    top: "0"<br></textarea>
+</div>
+
+<script>
+  function printMousePos(event) {
+    var element = document.getElementsByClassName("image-map-coords")[0];
+    var position = element.getBoundingClientRect();
+    var x = Math.trunc(event.clientX - position.left);
+    var y = Math.trunc(event.clientY - position.top);
+    document.getElementById('click-coords').innerHTML = "    left: \"" + x + "\"\n    top: \"" + y + "\"\n";
+  }
+
+  var element = document.getElementsByClassName("image-map-coords")[0];
+  element.addEventListener("click", printMousePos);
+  document.getElementById('click-coords').innerHTML = "    left: \"0\"\n    top: \"0\"\n";
+
+  copyBtn = document.getElementById('click-copy');
+  copyBtn.addEventListener('click', function(event) {
+    var copyTextarea = document.getElementById('click-coords');
+    copyTextarea.focus();
+    copyTextarea.select();
+
+    try {
+      var successful = document.execCommand('copy');
+      var msg = successful ? 'successful' : 'unsuccessful';
+      console.log('Copying text command was ' + msg);
+    } catch (err) {
+      console.log('Oops, unable to copy');
+    }
+  });
+</script>
+<!-- END SECTION -->
