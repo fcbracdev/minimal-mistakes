@@ -24,6 +24,11 @@
 			}
 		}
 	}
+	.image-map-circle { 
+		&:hover {
+  			outline: 2px solid dodgerblue;		
+		}
+	}
 	a {
 		display: block;
 		position: absolute;
