@@ -80,7 +80,7 @@ layout: default
         {% if page.site_name %}
           <h3>Related Documents</h3>
           <ul>
-            {% assign posts = site.posts | where_exp: "post", "post.categories contains 'record'" %}
+            {% assign posts = site.pages | where_exp: "page", "page.categories contains 'record'" %}
             {%- for post in posts -%}
               {% if post.related_sites contains page.site_name or post.related_sites contains 'ALL' %}
                 <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
