@@ -148,6 +148,9 @@
 
 .grid__item {
   margin-bottom: 0.5em;
+  border: 2px solid $active-color;
+  border-radius: 10px;
+  padding: 0px 4px;
 
   @include breakpoint($small) {
     float: inline-start;
