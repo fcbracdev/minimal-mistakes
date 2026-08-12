@@ -59,13 +59,13 @@ layout: default
             </tr>
           </thead>
           <tbody>
-            {% if page.pickup_date %}<tr><td><strong>Pickup Date</strong></td><td>{{ page.pickup_date }}</td></tr>{% endif %}
-            {% if page.scan_date %}<tr><td><strong>Scan Date</strong></td><td>{{ page.scan_date }}</td></tr>{% endif %}
-            {% if page.ocr_date %}<tr><td><strong>OCR Date</strong></td><td>{{ page.ocr_date }}</td></tr>{% endif %}
-            {% if page.drawings_pulled %}<tr><td><strong>Drawings Pulled & Sent</strong></td><td>{{ page.drawings_pulled }}</td></tr>{% endif %}
-            {% if page.sent_date %}<tr><td><strong>Sent Date</strong></td><td>{{ page.sent_date }}</td></tr>{% endif %}
-            {% if page.returned_date %}<tr><td><strong>Returned Date</strong></td><td>{{ page.returned_date }}</td></tr>{% endif %}
-            {% if page.pages %}<tr><td><strong>Pages</strong></td><td>{{ page.pages }}</td></tr>{% endif %}
+            {% if page.pickup_date and page.pickup_date != "NA" %}<tr><td><strong>Pickup Date</strong></td><td>{{ page.pickup_date }}</td></tr>{% endif %}
+            {% if page.scan_date and page.scan_date != "NA" %}<tr><td><strong>Scan Date</strong></td><td>{{ page.scan_date }}</td></tr>{% endif %}
+            {% if page.ocr_date and page.ocr_date != "NA" %}<tr><td><strong>OCR Date</strong></td><td>{{ page.ocr_date }}</td></tr>{% endif %}
+            {% if page.drawings_pulled and page.drawings_pulled != "NA" %}<tr><td><strong>Drawings Pulled & Sent</strong></td><td>{{ page.drawings_pulled }}</td></tr>{% endif %}
+            {% if page.sent_date and page.sent_date != "NA" %}<tr><td><strong>Sent Date</strong></td><td>{{ page.sent_date }}</td></tr>{% endif %}
+            {% if page.returned_date and page.returned_date != "NA" %}<tr><td><strong>Returned Date</strong></td><td>{{ page.returned_date }}</td></tr>{% endif %}
+            {% if page.pages and page.pages != "NA" %}<tr><td><strong>Pages</strong></td><td>{{ page.pages }}</td></tr>{% endif %}
           </tbody>
         </table>
 
