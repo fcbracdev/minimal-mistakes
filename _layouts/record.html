@@ -59,6 +59,7 @@ layout: default
             </tr>
           </thead>
           <tbody>
+            {% if page.publish_date and page.publish_date != "NA" %}<tr><td><strong>Publish Date</strong></td><td>{{ page.publish_date }}</td></tr>{% endif %}
             {% if page.pickup_date and page.pickup_date != "NA" %}<tr><td><strong>Pickup Date</strong></td><td>{{ page.pickup_date }}</td></tr>{% endif %}
             {% if page.scan_date and page.scan_date != "NA" %}<tr><td><strong>Scan Date</strong></td><td>{{ page.scan_date }}</td></tr>{% endif %}
             {% if page.ocr_date and page.ocr_date != "NA" %}<tr><td><strong>OCR Date</strong></td><td>{{ page.ocr_date }}</td></tr>{% endif %}
@@ -68,10 +69,12 @@ layout: default
             {% if page.pages and page.pages != "NA" %}<tr><td><strong>Pages</strong></td><td>{{ page.pages }}</td></tr>{% endif %}
           </tbody>
         </table>
+            
+        {% if page.notes and page.notes != "" %}<h4>Notes</h4><p>{{ page.notes }}</p>{% endif %}
 
         {{ content }}
 
-        {% if page.document %}<p><a href="{{ page.document }}" class="btn btn--primary" target="_blank">Open Document</a></p>{% endif %}
+        {% if page.document %}<p><a href="{{ site.docs_site }}{{ page.document }}" class="btn btn--primary" target="_blank">Open Document</a></p>{% endif %}
 
         {% if page.related_sites.size > 0 %}
         <h3>Related Sites</h3>
