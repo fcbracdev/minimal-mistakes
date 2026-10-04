@@ -59,7 +59,6 @@ layout: default
             </tr>
           </thead>
           <tbody>
-            {% if page.publish_date and page.publish_date != "NA" %}<tr><td><strong>Publish Date</strong></td><td>{{ page.publish_date }}</td></tr>{% endif %}
             {% if page.pickup_date and page.pickup_date != "NA" %}<tr><td><strong>Pickup Date</strong></td><td>{{ page.pickup_date }}</td></tr>{% endif %}
             {% if page.scan_date and page.scan_date != "NA" %}<tr><td><strong>Scan Date</strong></td><td>{{ page.scan_date }}</td></tr>{% endif %}
             {% if page.ocr_date and page.ocr_date != "NA" %}<tr><td><strong>OCR Date</strong></td><td>{{ page.ocr_date }}</td></tr>{% endif %}
