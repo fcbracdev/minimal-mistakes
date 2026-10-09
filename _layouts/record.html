@@ -22,7 +22,7 @@ layout: default
 <div id="main" role="main">
   {% include sidebar.html locale=locale %}
 
-  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork"{% if page.locale %} lang="en"{% endif %}>
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | replace: '|', '&#124;' | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
@@ -42,9 +42,9 @@ layout: default
 
       <section class="page__content e-content" itemprop="text">
         {% if page.toc %}
-          <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
-            <nav class="toc" aria-label="Table of contents">
-              <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[locale].toc_label | default: "On this page" }}</h4></header>
+          <aside aria-label="Table of contents" class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}" aria-labelledby="page__toc__">
+            <nav class="toc" aria-label="Table of contents" >
+              <header><h4 id="page__toc__" class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[locale].toc_label | default: "On this page" }}</h4></header>
               {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
             </nav>
           </aside>
@@ -73,7 +73,7 @@ layout: default
 
         {{ content }}
 
-        {% if page.document %}<p><a href="{{ site.docs_site }}{{ page.document }}" class="btn btn--primary" target="_blank">Open Document</a></p>{% endif %}
+        {% if page.document %}<p><a href="{{ site.docs_site }}{{ page.document }}" class="btn btn--primary" target="_blank"><i class='fa-solid fa-up-right-from-square'></i> Open Document</a></p>{% endif %}
 
         {% if page.related_sites.size > 0 %}
         <h3>Related Sites</h3>

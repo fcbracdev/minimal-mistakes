@@ -1,144 +1,28 @@
-$black: #282828;
-
-$ratio-regular: 0.9;
-$ratio-tall: 1.2;
-$ratio-short: 0.6;
-$card_width: 300px;
-$card_height: $card_width * $ratio-regular;
-$card_padding: 10px;
-$card_margin: 5px;
-$card_round: 10px;
-
-$card-padding-basis: 15px;
-
-.collection-card-container{
-  display: flex;
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-
-a {
-  &:visited {
-    text-decoration: none  !important;
-  }
-
-  &:hover {
-    text-decoration: none  !important;
-  }
-}
-}
-
-.collection-card-tall {
-  height: $card_width * $ratio-tall !important;
-  min-height: $card_width * $ratio-tall !important;
-}
-
-.collection-card-short {
-  height: $card_width * $ratio-short !important;
-  min-height: $card_width * $ratio-short !important;
-}
-
-.cc-no-decoration {
-      text-decoration: none;
+.card-list {
+    border: 3px solid #fff;
+    padding: 20px;
 }
 
 .collection-card {
-  width: $card_width;
-  border: $active-color 3px solid;
-  height: $card_height;
-  min-height: $card_height;
-  position: relative; 
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 0px;
-  margin: $card_margin;
-  border-radius: 12px;
-
-  .cc_nav__title {
-    margin: 0;
-    padding: 5px 5px;
-    font-family: $sans-serif-narrow;
-    font-size: $type-size-5;
-    font-weight: bold;
-    background: $danger-color;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 46%;
+  margin: 8px;
+  text-align: center;
+  float: left;
+  padding: 8px;
+  border: 8px;
+  
+  img {
+    width: 80%;
+    padding: 10px;
   }
 
-  .cercla-status {
-    position: absolute; 
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
-    bottom: 0; 
-    color: $background-color;
-    background: mix($primary-color, $darker-gray, 90%);
-    text-align: center;
-    border-radius: 0px 0px 8px 8px ;
+  &:hover {
+    opacity: 0.7;
   }
-
-  .notice--text
-  {
-    background: mix($light-gray, $darker-gray, 90%);
-  }
-
-  .notice--text--primary
-  {
-    background: mix($primary-color, $darker-gray, 90%);
-  }
-
-  .notice--text--info
-  {
-    background: mix($info-color, $darker-gray, 90%);
-  }
-
-  .notice--text--warning
-  {
-    background: mix($warning-color, $darker-gray, 90%);
-  }
-
-  .notice--text--success
-  {
-    background: mix($success-color, $darker-gray, 90%);
-  }
-
-  .notice--text--danger
-  {
-    background: mix($danger-color, $darker-gray, 90%);
-  }
-
-  hr {
-        color: $background-color;
-        background: mix($primary-color, $darker-gray, 90%);
-  }
-
-  h1, h2, h3, h4, h5 {
-        margin: 0px;
-        padding: 10px;
-        border: 0px;
-        border-radius: 8px 8px 0px 0px;
-        color: $background-color;
-        background: mix($primary-color, $darker-gray, 90%);
-
-        span {
-            padding: 4px;
-        }
-    }  
-
-  p {
-      margin: 0px !important;
-      padding: $card-padding-basis;
-      border: 0px;
-      color: $text-color;
-      background: $background-color;
-      overflow: hidden;
-      text-overflow: ellipsis;
-  }   
 }
 
-.collection-card:hover {
-  border: $primary-color 3px solid;
+.collection-title {
+  font-size: 18px;
 }
+

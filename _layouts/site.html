@@ -22,7 +22,7 @@ layout: default
 <div id="main" role="main">
   {% include sidebar.html locale=locale %}
 
-  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork"lang="en">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | replace: '|', '&#124;' | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
@@ -41,9 +41,9 @@ layout: default
       {% endunless %}
 
       <section class="page__content e-content" itemprop="text">
-        <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
+        <aside aria-label="Table of contents" class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}" aria-labelledby="page__toc__">
         {% if page.site_name %}
-         <h3>{{ page.site_name }}</h3>
+         <h3 id="page__toc__">{{ page.site_name }}</h3>
         {% endif %}
 
           {% if page.cercla_status %}
@@ -57,10 +57,13 @@ layout: default
           <nav class="toc" aria-label="Map">
                 <header><h4 class="nav__title">Map</h4></header>
 
-          {% if page.coordinates %}<p style="text-align: center; margin: 0 0 !important;">{{page.coordinates}}</p><a title="Open at OpenStreetMap" href="https://www.openstreetmap.org/search?query={{page.coordinates | url_encode}}&zoom=17" target="_blank">{% endif %}
-            <img src="{{ page.map_file }}">
-          {% if page.coordinates %}</a>{% endif %}
-            <p style="font-size: 0.45em; text-align: right; margin: 0 0 !important;">Map data from <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> and <a href="https://opentopomap.org/about">OpenTopoMap</a></p>
+          {% if page.coordinates %}<h5 style="text-align: center; margin: 0 0 !important;">{{page.coordinates}}</h5>
+            <a title="Open at OpenStreetMap" aria-label="Open at OpenStreetMap" href="https://www.openstreetmap.org/search?query={{page.coordinates | url_encode}}&zoom=17" target="_blank">
+          {% endif %}
+            <img title="{{ page.site_name }}" src="{{ page.map_file }}">
+          {% if page.coordinates %}
+            </a>
+          {% endif %}
           </nav>
           </div>
           {% endif %}
@@ -105,6 +108,7 @@ layout: default
         {% endif %}
         {% include page__taxonomy.html locale=locale %}
         {% include page__date.html locale=locale %}
+  <p style="text-align: right; margin: 0 0 !important;">Map data from <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> and <a href="https://opentopomap.org/about">OpenTopoMap</a></p></div>
       </footer>
 
       {% if page.share %}{% include social-share.html locale=locale %}{% endif %}
@@ -131,4 +135,3 @@ layout: default
   {% elsif page.id and page.related %}
     {% include page__related.html locale=locale posts=site.posts %}
   {% endif %}
-</div>

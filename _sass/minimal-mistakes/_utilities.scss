@@ -41,6 +41,10 @@
   margin: -1px;
   overflow: hidden;
   white-space: nowrap;
+  &:focus {
+    outline: 2px dashed red;
+    outline-offset: 2px;
+  }
 }
 
 body:hover .visually-hidden a,
@@ -64,8 +68,9 @@ body:hover .visually-hidden button {
   z-index: 100000;
   text-decoration: none;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  outline: 2px dashed red;
+  outline-offset: 2px;
 }
-
 /*
    Skip links
    ========================================================================== */

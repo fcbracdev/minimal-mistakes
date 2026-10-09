@@ -1,5 +1,5 @@
 {% assign locale = include.locale | default: site.locale %}
-<aside class="sidebar__right">
+<aside aria-label="Table of contents" class="sidebar__right" aria-labelledby="page__toc__">
 <nav class="toc" markdown="1">
 <header><h4 class="nav__title"><i class="fas fa-{{ include.icon | default: 'file-alt' }}"></i> {{ include.title | default: site.data.ui-text[locale].toc_label }}</h4></header>
 *  Auto generated table of contents

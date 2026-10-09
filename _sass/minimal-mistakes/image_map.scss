@@ -37,7 +37,8 @@
 				line-height: 0.8em;
 				margin: 0px;
 				padding: 2px;
-				float: right;}
+				float: right;
+			}
 		}
 
 		.image-map-circle { 
@@ -51,6 +52,10 @@
 
 			&:hover {
 				outline: 2px solid dodgerblue;		
+			}
+			&:focus {
+				outline: 2px dashed red;
+				outline-offset: 2px;
 			}
 		}
 	}
@@ -74,5 +79,23 @@
 			visibility: visible;
   			outline: 2px solid $dark-gray;		
 		}
+	}
+}
+
+.image-map-coord-ta {
+	width: 100%;
+	height: 100px;
+	font-family: monospace;
+	font-size: 1rem;
+	padding: 0.5rem;
+	margin-top: 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: none;
+
+	&:focus 
+	{
+		outline: 2px dashed red;
+		outline-offset: 2px;
 	}
 }
