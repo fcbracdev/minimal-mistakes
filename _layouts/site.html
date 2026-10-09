@@ -57,11 +57,11 @@ layout: default
           <nav class="toc" aria-label="Map">
                 <header><h4 class="nav__title">Map</h4></header>
 
-          {% if page.coordinates %}<h5 style="text-align: center; margin: 0 0 !important;">{{page.coordinates}}</h5>
-            <a title="Open at OpenStreetMap" aria-label="Open at OpenStreetMap" href="https://www.openstreetmap.org/search?query={{page.coordinates | url_encode}}&zoom=17" target="_blank">
+          {% if page.latitude and page.longitude %}<h5 style="text-align: center; margin: 0 0 !important;overflow: hidden;">{{page.latitude}},{{page.longitude}}</h5>
+            <a title="Open at OpenStreetMap" aria-label="Open at OpenStreetMap" href="https://www.openstreetmap.org/search?query={{page.latitude}},{{page.longitude}}&zoom=17" target="_blank">
           {% endif %}
             <img title="{{ page.site_name }}" src="{{ page.map_file }}">
-          {% if page.coordinates %}
+          {% if page.latitude and page.longitude %}
             </a>
           {% endif %}
           </nav>

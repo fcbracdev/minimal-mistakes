@@ -16,7 +16,7 @@
   {% endif %}
 {% endif %}
 
-<figure class="{{ gallery_layout }} {{ include.class }}" alt="Image Gallery" role="group" aria-label="Image Gallery">
+<figure class="{{ gallery_layout }} {{ include.class }}" alt="Image Gallery" role="figure" aria-label="Image Gallery">
   {% for img in gallery %}
     {% if img.url %}
       <a href="{{ img.url | relative_url }}"
