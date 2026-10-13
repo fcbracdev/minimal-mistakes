@@ -73,7 +73,7 @@ layout: default
 
         {{ content }}
 
-        {% if page.document %}<p><a href="{{ site.docs_site }}{{ page.document }}" class="btn btn--primary" target="_blank"><i class='fa-solid fa-up-right-from-square'></i> Open Document</a></p>{% endif %}
+        {% if page.document %}<p><a href="{{ site.docs_site }}{{ page.document }}" class="btn btn--primary" target="_blank">Open Document</a> <i class='fa-solid fa-up-right-from-square'></i></p>{% endif %}
 
         {% if page.related_sites.size > 0 %}
         <h3>Related Sites</h3>
