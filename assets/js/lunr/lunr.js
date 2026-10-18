@@ -43,11 +43,11 @@ var lunr = function (config) {
   builder.pipeline.add(
     lunr.trimmer,
     lunr.stopWordFilter,
-    lunr.stemmer
+    // lunr.stemmer
   )
 
   builder.searchPipeline.add(
-    lunr.stemmer
+    // lunr.stemmer
   )
 
   config.call(builder, builder)
@@ -702,7 +702,6 @@ lunr.Pipeline.prototype.run = function (tokens) {
  */
 lunr.Pipeline.prototype.runString = function (str, metadata) {
   var token = new lunr.Token (str, metadata)
-
   return this.run([token]).map(function (t) {
     return t.toString()
   })
